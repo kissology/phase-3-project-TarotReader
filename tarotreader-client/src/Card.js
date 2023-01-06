@@ -9,13 +9,14 @@ function Card ({cards}) {
             meaning={tarotCards.meaning}
             reading={tarotCards.reading}
             image={tarotCards.img}
+            imageback={tarotCards.back}
             />
     })
 
+
     return (
        <ul className="cards">
-        <img src={require('./Tarotback.png')} className ="tarotback" alt="tarotback" />
-        {tarotCards}
+        {tarotCards[0]}
         </ul>
     )
 }
