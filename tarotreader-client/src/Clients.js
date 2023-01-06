@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import ClientCard from './ClientCard';
+import PostNewClient from "./PostNewClient";
 
-function Clients(){
-
-const [clients, setClients] = useState([])
-
-
-
-    useEffect(() => {
-        fetch("http://localhost:9292/users")
-           .then(response => response.json())
-           .then(clients => setClients(clients))
-           console.log(clients)
-           
-    },[]);
-    
-
-    
+function Clients({clients, addNewClient}){
+ const clientData = clients.map((client) => {
+    return <ClientCard
+    key={client.id}
+    name={client.name}
+    birthdate={client.birthdate}
+    sign={client.sign}
+    addNewClient={addNewClient}
+    />
+ })
+  
     return (
         <div>
         <Link className="nav-link-home" to="/">
             HOME
         </Link>
-        <ClientCard/>
+        <PostNewClient addNewClient={addNewClient}/>
+        <ul className="cards">
+        {clientData}
+        </ul>
         </div>
     )
 }

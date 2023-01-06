@@ -8,38 +8,46 @@ import Header from './Header';
 
 function App() {
   const [readings, setReadings] = useState([])
+  const [clients, setClients] = useState([])
 
 
-  useEffect(() => {
+
+useEffect(() => {
     fetch("http://localhost:9292/readings")
        .then(response => response.json())
        .then(readings => setReadings(readings))
 },[]);
+
+useEffect(() => {
+  fetch("http://localhost:9292/users")
+     .then(response => response.json())
+     .then(clients => setClients(clients))
+},[]);
+
+function addNewClient(e, newClient) {
+  e.preventDefault();
+
+  let postRequest = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(newClient),
+  }
+  fetch('http://localhost:9292/users', postRequest)
+  .then(resp => resp.json())
+  .then(newClient => setClients([...clients,newClient]))
+}
 
 function handleDeleteReading(id){
   const deleteReading = readings.filter((reading) => reading.id !== id)
   setReadings(deleteReading)
 }
 
-function addNewReading(e, newReading){
- e.preventDefault();
-
- let postRequest = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
-  body: JSON.stringify(newReading)
- }
- fetch("http://localhost:9292/readings", postRequest)
- .then(response => response.json())
- .then(newReading => setReadings([...readings, newReading]))
-}
-
 function handleUpdateComment(newComment){
   const updateComment = readings.map((reading) => {
-    if(reading.comments === newComment.id) {
+    if(reading.id === newComment.id){
       return newComment
     } else {
       return reading
@@ -47,7 +55,7 @@ function handleUpdateComment(newComment){
   })
   setReadings(updateComment)
 }
-
+console.log(readings)
  return (
 
     <div className="App">
@@ -58,20 +66,19 @@ function handleUpdateComment(newComment){
         <Readings 
         readingData={readings} 
         setReadings={setReadings}
+        onDeleteReading={handleDeleteReading}
+        onChangeComment ={handleUpdateComment}
         />
         </Route>
 
         <Route path="/Clients">
-        <Clients/>
+        <Clients clients={clients} addNewClient={addNewClient}/>
         </Route>
 
       <Route path="/">
         <Home 
         readingData={readings} 
         setReadings={setReadings}
-        addNewReading={addNewReading}
-        onDeleteReading={handleDeleteReading}
-        onChangeComment ={handleUpdateComment}
         />
         </Route>
 

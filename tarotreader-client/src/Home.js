@@ -1,9 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
 import Card from './Card';
-import PostReading from './PostReading';
 
-function Home({addNewReading}){
+function Home(){
     const [show, setShow] = useState(false)
     const [cards, setCards] = useState([])
 
@@ -16,7 +15,6 @@ function Home({addNewReading}){
         }
            )
     }
-
 
 function handleShuffle(e){
     e.preventDefault();
@@ -33,11 +31,10 @@ function handleShuffle(e){
    
 
    return (
-    <main class="wrapper" className="main">
+    <main className="main" >
         <button onClick={(e) => {handleShuffle(e)}} className="button">Pick a Card</button>
         <Card 
         cards={cards}/>
-        <PostReading addNewReading={addNewReading}/>
     
     </main>
 
