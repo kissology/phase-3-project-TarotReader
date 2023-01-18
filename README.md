@@ -1,5 +1,6 @@
 # phase-3-project-TarotReader
-Tarot Reading app built with sinatra and react
+
+This application was built using React/Javascript front-end and a Ruby/Active Record/SQL/Sinatra for back-end.
 
 Welcome to Arcana!
 
@@ -18,5 +19,4 @@ App Utilization:
 - Once you receive the reading, you are free to sign up with your name, birthdate, and zodiac sign in order to better customize future readings, as well as leave reviews for your readings, and read reviews other client have read for their readings.
 
 Further Information:
-- This application was developed using React/Javascript front-end and a Ruby/Active Record/SQL/Sinatra for back-end.
 - The database and schema were custom modeled using RESTful conventions.
