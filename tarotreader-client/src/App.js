@@ -11,7 +11,6 @@ function App() {
   const [clients, setClients] = useState([])
 
 
-
 useEffect(() => {
     fetch("http://localhost:9292/readings")
        .then(response => response.json())

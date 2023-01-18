@@ -111,11 +111,11 @@ li.card {
   color: black;
   text-align: center;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 70px;
 }
 
 .card h2 {
-  color:pink;
+  color:#FFF0F5;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 25px;
@@ -126,17 +126,15 @@ li.card {
 }
 
 .card p {
-  color: #4d004d;
+  color:#4d004d;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri,;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   position:relative;
   top: 20px;
   bottom: 10px;
   background: white;
   opacity: 0.5;
-  border-radius:80%;
-  box-shadow: 150px 50px 100px 50px white inset;
 }
 
 button.update-button {
@@ -332,7 +330,7 @@ li.client-card {
   border-color: black;
   border-radius: 10rem;
   position: relative;
-  left: 520px;
+  left: 510px;
  
 }
 
