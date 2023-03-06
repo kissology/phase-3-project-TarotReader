@@ -61,7 +61,7 @@ console.log(readings)
       <Header/>
       <Switch>
 
-      <Route path="/Readings">
+      <Route path="/readings">
         <Readings 
         readingData={readings} 
         setReadings={setReadings}
@@ -70,7 +70,7 @@ console.log(readings)
         />
         </Route>
 
-        <Route path="/Clients">
+        <Route path="/clients">
         <Clients clients={clients} addNewClient={addNewClient}/>
         </Route>
 

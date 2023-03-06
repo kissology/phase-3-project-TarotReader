@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ClientCard from './ClientCard';
 import PostNewClient from "./PostNewClient";
 
@@ -15,10 +14,7 @@ function Clients({clients, addNewClient}){
  })
   
     return (
-        <div>
-        <Link className="nav-link-home" to="/">
-            HOME
-        </Link>
+        <div className="client-div">
         <PostNewClient addNewClient={addNewClient}/>
         <ul className="cards">
         {clientData}

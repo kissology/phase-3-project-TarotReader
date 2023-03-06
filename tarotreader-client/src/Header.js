@@ -7,14 +7,21 @@ import { Link } from "react-router-dom";
         <div className="wrapper" id="header-container">
             <header className="header">
              <nav className="nav-bar">
-                <div id="link-container">
-                    <Link className="nav-link" to="/Readings">
+             <div className="link-home">
+                    <Link className="nav-link-home" to="/">
+                        Home 🌙
+                    </Link>
+                </div>
+                <br></br>
+                <div className="link-reading">
+                    <Link className="nav-link-readings" to="/readings">
                         Past Readings 🔮
                     </Link>
                 </div>
-                <div>
-                    <Link className="nav-link-client" to="/Clients">
-                        ✨ Clients 🌙
+                <br></br>
+                <div className="link-client">
+                    <Link className="nav-link-client" to="/clients">
+                        Clients ✨
                     </Link>
                 </div>
             </nav>

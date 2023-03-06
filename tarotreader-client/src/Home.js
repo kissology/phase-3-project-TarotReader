@@ -31,12 +31,12 @@ function handleShuffle(e){
    
 
    return (
-    <main className="main" >
+    <div className="main" >
         <button onClick={(e) => {handleShuffle(e)}} className="button">Pick a Card</button>
         <Card 
         cards={cards}/>
     
-    </main>
+    </div>
 
     );
 }

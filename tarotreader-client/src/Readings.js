@@ -1,6 +1,5 @@
 import React from 'react';
 import ReadingList from './ReadingList';
-import { Link } from "react-router-dom";
 
 
 function Readings({readingData, onDeleteReading, onChangeComment}){
@@ -17,12 +16,9 @@ return <ReadingList
 
     return (
         <div className="readings">
-        <ul className="readings">
+        <ul style={{"width": "100%"}}className="readings">
         {renderReading}
         </ul>
-        <Link className="nav-link" to="/">
-            HOME
-        </Link>
         </div>
     )
 }
